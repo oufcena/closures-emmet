@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Closures & function expression <u>MUST</u> mix!</h2>
+
+<h2 contenteditable="true" spellcheck="false" style="outline:none" 
+onkeyup="emmet(this, event);">Hello World!</h2>
+
+<script>
+var emmet = 
+(function() {
+  var word = '';
+  /* Local to the 1st function, but
+     Global to the 2nd nested child function
+     Closures, Baby!
+  */
+  return function(that, e) {
+    if(e.key=='Tab') {
+      that.innerText += word;
+      word = '';
+    } else {
+      word += e.key;
+      alert(word);
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
+
+
